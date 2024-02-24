@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Expectancy Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Life Expectancy Prediction</h1>
+        <form method="post" action="{{ url_for('predict') }}">
+            <label for="Year">Year:</label>
+            <input type="text" name="Year" placeholder="Enter the year" required>
+
+            <label for="Mortality">Adult Mortality:</label>
+            <input type="text" name="Mortality" placeholder="Enter the adult mortality rate" required>
+
+            <label for="Alcohol">Alcohol:</label>
+            <input type="text" name="Alcohol" placeholder="Enter the alcohol consumption" required>
+
+            <label for="BMI">BMI:</label>
+            <input type="text" name="BMI" placeholder="Enter the BMI" required>
+
+            <label for="Polio">Polio:</label>
+            <input type="text" name="Polio" placeholder="Enter the polio vaccination coverage" required>
+
+            <label for="Diphtheria">Diphtheria:</label>
+            <input type="text" name="Diphtheria" placeholder="Enter the diphtheria vaccination coverage" required>
+
+            <label for="GDP">GDP:</label>
+            <input type="text" name="GDP" placeholder="Enter the GDP" required>
+
+            <label for="Population">Population:</label>
+            <input type="text" name="Population" placeholder="Enter the population" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if predict %}
+            <p>Predicted Life Expectancy: {{ predict }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
